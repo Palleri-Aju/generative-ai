@@ -9,14 +9,14 @@ model = ChatGoogleGenerativeAI(
     model = "gemini-3.5-flash-lite");
 
 prompt_template = ChatPromptTemplate.from_messages([
-    ("system", "You are a helpful Python assistant that explains concepts in simple terms."),
+    ("system", "You are a helpful Python assistant that explains concepts in simple terms to {audience}"),
     ("human", "Explain {topic} at a {difficulty} level in {lines} lines.")
 ])
 
 messages = prompt_template.invoke({
     "audience": "software developers",
     "topic": "Generative AI",
-    "difficulty": "beginner",
+    "difficulty": "expert",
     "lines": 5
 })
 
